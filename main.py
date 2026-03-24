@@ -145,5 +145,3 @@ if __name__ == '__main__':
     # O wrapper do curses garante que o terminal volte ao normal se o código der erro
     vel = selecionar_nivel_dificuldade()
     curses.wrapper(ciclo_do_jogo, velocidade_jogo=vel)
-
-
