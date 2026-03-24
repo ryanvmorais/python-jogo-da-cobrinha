@@ -1,0 +1,2 @@
+# Biblioteca para suporte ao terminal (Essencial para Windows)
+windows-curses; sys_platform == 'win32'
