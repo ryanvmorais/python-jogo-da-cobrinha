@@ -21,12 +21,13 @@ Este exercício foi estruturado para consolidar conceitos essenciais de algoritm
 ---
 ### 🧠 Guia de Implementação: A Lógica por trás do Código
 Para quem está começando, o maior desafio não é a sintaxe, mas a **montagem do raciocínio**. Confira o passo a passo da construção deste jogo:
-1. **Modelagem do Corpo:** A cobra é uma lista de listas `[[y, x], [y, x]]`. A "cabeça" é sempre o primeiro item (índice 0).
-2. **O Truque do Movimento:** Em cada turno, criamos uma "nova cabeça" na direção escolhida. Se a cobra não comer a fruta, removemos o último item da lista (a cauda). Isso cria a ilusão de movimento.
-3. **Detecção de Colisão:** O sistema verifica constantemente se a coordenada da cabeça é igual a uma borda ou se a cabeça "encostou" em qualquer outra coordenada que já pertence ao corpo.
-4. **Gerenciamento de Frutas:** Usamos a biblioteca `random` para gerar coordenadas aleatórias. Se a cabeça ocupar a mesma posição da fruta, a cobra "come", ganha ponto e a cauda não é removida, fazendo-a crescer.
-5. **Prevenção de Movimento Oposto:** Implementamos uma lógica para impedir que a cobra vire 180° (ex: ir para cima quando está indo para baixo), o que causaria um "suicídio" imediato.
-6. **O Game Loop:** Um loop `while True` limpa a tela, desenha os atores, processa a entrada do usuário e atualiza a posição da cobra em milissegundos.
+1. **Modelagem Dinâmica do Corpo:** A cobra não é um objeto único, mas uma **lista de coordenadas** `[[y, x], [y, x]]`. A "cabeça" é sempre o primeiro item (índice `0`), e o restante da lista forma o rastro que chamamos de corpo.
+2. **A Matemática do Movimento:** Em vez de "empurrar" cada gomo da cobra, usamos um truque lógico: em cada turno, calculamos e inserimos uma **nova cabeça** na direção escolhida. Se a cobra não comer nada, removemos o último item da lista (a cauda). Essa troca constante cria a ilusão de movimento.
+3. **Detecção de Colisões:** O sistema monitora a coordenada da cabeça em tempo real. Se ela for igual aos limites da borda (`y <= 0` ou `x >= largura`) ou se coincidir com qualquer coordenada que já exista na lista do corpo, o jogo identifica o impacto e encerra a partida.
+4. **Ecossistema e Alimentação:** Utilizamos a biblioteca `random` para sortear posições para a fruta. Quando a cabeça ocupa a mesma posição da fruta, o sistema incrementa a pontuação e **não remove a cauda** naquele turno, resultando no crescimento natural da cobra.
+5. **Prevenção de Movimento Oposto:** Para evitar o "suicídio lógico", implementamos uma trava que impede a cobra de virar 180° instantaneamente (ex: tentar ir para cima quando já está indo para baixo). O comando só é aceito se for uma curva lateral.
+6. **O Coração do Jogo (Game Loop):** Um loop `while True` coordena o tempo do jogo. Ele limpa a tela, desenha os atores (caracteres `ASCII`), processa a entrada do teclado e aguarda alguns milissegundos antes de repetir tudo, garantindo que o jogo não rode rápido demais para o olho humano.
+7. **Abstração com Funções:** O código é dividido em funções especialistas (como `mover_cobra` e `verificar_colisao`), facilitando a manutenção e permitindo que você entenda o papel de cada peça no funcionamento global do sistema.
 
 ---
 
@@ -76,7 +77,12 @@ Para garantir que o jogo funcione corretamente, certifique-se de ter os seguinte
 
 Para exercitar o que aprendeu, tente modificar o código e implementar estas novas funcionalidades:
 
-1. **🏆 Sistema de Recorde:** Salve a maior pontuação em um arquivo `.txt` para que ela persista mesmo após fechar o jogo.
+1. **🏆 Sistema de Recorde (Persistência de Dados):**
+
+Atualmente, a pontuação é reiniciada toda vez que o programa fecha. O desafio é criar uma "memória permanente" para o jogo:
+   * **O Conceito:** Utilize as funções de manipulação de arquivos do Python (`open`, `read`, `write`).
+   * **A Lógica:** Ao iniciar o jogo, o programa lê um arquivo chamado `recorde.txt`. Se a pontuação atual ultrapassar o valor lido, o jogo deve sobrescrever o arquivo com o novo recorde antes de encerrar.
+   * **O Aprendizado:** Você aprenderá a salvar dados fisicamente no computador (`HD/SSD`), garantindo que o recorde persista mesmo após desligar a máquina.
 2. **🍎 Frutas Especiais:** Crie uma fruta "dourada" que aparece raramente e dá 5 pontos de uma vez.
 3. **🔳 Atravesar Paredes:** Altere a lógica de colisão para que, ao bater na borda direita, a cobra reapareça na borda esquerda.
 
