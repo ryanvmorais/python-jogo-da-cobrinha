@@ -1,4 +1,4 @@
-![Jogo da Cobrinha em Python - Lógica de Programação e Matrizes](https://github.com/ryanvmorais/python-jogo-da-velha/blob/main/assets/jogo-da-velha-python-logica-programacao.png?raw=true)
+![Jogo da Cobrinha em Python - Lógica de Programação e Matrizes](https://github.com/ryanvmorais/python-jogo-da-cobrinha/blob/main/assets/jogo-da-cobrinha-python.png?raw=true)
 
 # 🐍 Jogo da Cobrinha em Python | Exercício de Lógica de Programação
 
