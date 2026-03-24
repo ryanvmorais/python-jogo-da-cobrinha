@@ -1,2 +1,15 @@
-# Biblioteca para suporte ao terminal (Essencial para Windows)
+# ---------------------------------------------------------
+# DEPENDENCIAS DO PROJETO: JOGO DA COBRINHA
+# ---------------------------------------------------------
+# Este projeto utiliza a biblioteca 'curses' para a interface.
+# No Windows, e necessario o pacote 'windows-curses'.
+# ---------------------------------------------------------
+
+# Suporte ao terminal (Essencial para usuarios Windows)
 windows-curses; sys_platform == 'win32'
+
+# ---------------------------------------------------------
+# Para instalar as dependencias: pip install -r requirements.txt
+# Para rodar o jogo: python main.py
+# ---------------------------------------------------------
+
