@@ -1,25 +1,28 @@
 # 🤝 Como Contribuir no Jogo da Cobrinha
 
-Fico muito feliz que voce queira ajudar a melhorar este material educativo! Este projeto foi criado para ajudar desenvolvedores iniciantes a praticar logica com Python e a biblioteca curses.
+Este repositório é um espaço dedicado ao aprendizado de Python, Manipulação de Coordenadas e o uso da biblioteca **Curses** para interfaces de terminal. Sua colaboração é fundamental para fortalecer este material didático para a comunidade de desenvolvedores!
 
-## 🚀 Formas de Contribuir
+## 🚀 O que você pode fazer?
 
-Voce nao precisa ser um expert para ajudar. Aqui estao algumas ideias:
+1.  **Refinamento de Lógica:** Sugira melhorias no sistema de colisão ou na lógica de crescimento da cobra (listas e coordenadas).
+2.  **Novas Funcionalidades:** 
+    *   Implemente um sistema de **Recorde Máximo** (High Score) que persista em um arquivo `.txt`.
+    *   Adicione "frutas especiais" que dão mais pontos ou alteram a velocidade temporariamente.
+3.  **Interface e UX:** 
+    *   Melhore as bordas do campo utilizando caracteres diferentes da biblioteca Curses.
+    *   Adicione uma tela de "Pause" ou um menu inicial mais elaborado.
+4.  **Documentação:** Enriqueça as Docstrings das funções ou melhore as explicações sobre como o sistema de coordenadas `(y, x)` do Curses difere do padrão matemático tradicional no README.
 
-1.  **Melhorar a Didatica:** Viu um comentario que pode ser mais claro? Sugira uma alteracao!
-2.  **Corrigir Bugs:** Achou algum erro na logica de colisao ou no fechamento da janela? Abra uma Issue.
-3.  **Novas Funcionalidades:** Que tal implementar um sistema de cores para a cobra ou um contador de recordes (high score)?
-4.  **Refatoracao:** Consegue escrever a mesma logica de um jeito mais limpo ou moderno? Mostre como!
+## 🛠️ Como enviar sua sugestão
 
-## 🛠️ Passo a Passo para sua Contribuicao
+1.  Faça o **Fork** do projeto para sua conta pessoal.
+2.  Crie uma branch específica para sua modificação: `git checkout -b feature/nome-da-melhoria`.
+3.  Realize seus commits seguindo o padrão **Conventional Commits** (ex: `feat:`, `fix:`, `docs:`).
+4.  Envie suas alterações para o seu fork: `git push origin feature/nome-da-melhoria`.
+5.  Abra um **Pull Request** detalhando tecnicamente o que foi alterado e o impacto pedagógico da mudança.
 
-1.  Faca um **Fork** deste repositorio.
-2.  Crie uma **Branch** para sua modificacao: `git checkout -b minha-melhoria`.
-3.  Faca o **Commit** das suas alteracoes seguindo o padrao (ex: `feat: adicionar sistema de cores`).
-4.  Faca o **Push** para o seu repositorio: `git push origin minha-melhoria`.
-5.  Abra um **Pull Request** descrevendo o que voce mudou e por que isso ajuda quem esta aprendendo.
+## 📜 Diretrizes do Projeto
+- O código deve seguir o padrão de **Funções Modulares** e nomes autoexplicativos já estabelecido.
+- Mantenha a **coerência na nomenclatura** das variáveis (sempre em português e seguindo o padrão snake_case).
+- O objetivo principal é a **didática**: o uso da biblioteca `curses` pode ser desafiador para iniciantes, então mantenha os comentários claros e simples.
 
-## 📜 Regras de Ouro
-- Mantenha os nomes de variaveis e funcoes em **portugues** para seguir o padrao didatico.
-- Teste o jogo no seu terminal antes de enviar o PR.
-- Seja gentil nos comentarios; estamos todos em um ambiente de aprendizado!
