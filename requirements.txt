@@ -6,7 +6,7 @@
 # ---------------------------------------------------------
 
 # Suporte ao terminal (Essencial para usuarios Windows)
-windows-curses; sys_platform == 'win32'
+windows-curses==2.4.1; sys_platform == 'win32'
 
 # ---------------------------------------------------------
 # Para instalar as dependencias: pip install -r requirements.txt
