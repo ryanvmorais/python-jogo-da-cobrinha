@@ -19,7 +19,7 @@ Este exercício foi estruturado para consolidar conceitos essenciais de algoritm
 *   **Modularização:** Organização do código em funções com responsabilidades únicas (S.O.L.I.D. para iniciantes).
 
 ---
-### 🧠 Guia de Implementação: A Lógica por trás do Código
+### 🧠 Guia de Implementação (A Lógica por trás do Código):
 Para quem está começando, o maior desafio não é a sintaxe, mas a **montagem do raciocínio**. Confira o passo a passo da construção deste jogo:
 1. **Modelagem Dinâmica do Corpo:** A cobra não é um objeto único, mas uma **lista de coordenadas** `[[y, x], [y, x]]`. A "cabeça" é sempre o primeiro item (índice `0`), e o restante da lista forma o rastro que chamamos de corpo.
 2. **A Matemática do Movimento:** Em vez de "empurrar" cada gomo da cobra, usamos um truque lógico: em cada turno, calculamos e inserimos uma **nova cabeça** na direção escolhida. Se a cobra não comer nada, removemos o último item da lista (a cauda). Essa troca constante cria a ilusão de movimento.
