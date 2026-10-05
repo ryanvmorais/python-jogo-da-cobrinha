@@ -54,7 +54,7 @@ pyproject.toml        # gerenciado por uv — windows-curses (win32) + grupo dev
 uv.lock               # lock do grafo de dependências — nunca editar à mão
 .github/
   workflows/ci.yml    # ruff -> black --check -> mypy -> pytest, em push/PR
-  dependabot.yml      # PRs semanais de atualização (uv + github-actions)
+  dependabot.yml      # PRs aos domingos, agrupados por ecossistema (uv + github-actions)
   ISSUE_TEMPLATE/     # formulário de dúvida, erro ou sugestão (+ config.yml sem issue em branco)
   pull_request_template.md  # corpo padrão do PR: o quê/por quê e "Closes #N"
 ```
