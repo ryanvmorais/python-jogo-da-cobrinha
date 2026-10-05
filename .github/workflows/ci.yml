@@ -18,10 +18,10 @@ permissions:
 
 jobs:
   qualidade:
-    # ubuntu-latest: o `curses` da stdlib do Linux cobre a dependencia de
+    # ubuntu-26.04: o `curses` da stdlib do Linux cobre a dependencia de
     # runtime sem precisar do windows-curses (marcado so para sys_platform
     # == 'win32' no pyproject.toml).
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     strategy:
       fail-fast: false
       matrix:
