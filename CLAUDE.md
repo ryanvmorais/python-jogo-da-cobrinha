@@ -84,7 +84,7 @@ Detalhamento completo (RF-NN, ADRs) em
 
 Sequência do portão, sempre nesta ordem: `ruff check .` → `black --check
 .` → `mypy` → `pytest`. O `.github/workflows/ci.yml` roda exatamente essa
-sequência (Python 3.12, o piso, e 3.14, `ubuntu-latest`) em todo push na `main` e
+sequência (Python 3.12, o piso, e 3.14, `ubuntu-26.04`) em todo push na `main` e
 em todo PR — um check verde no PR significa o mesmo que um clone limpo
 passando.
 
