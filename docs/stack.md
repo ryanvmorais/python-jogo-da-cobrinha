@@ -24,7 +24,7 @@ main.py  ──►  curses (stdlib no Linux/macOS; windows-curses no Windows)
 ### Python 3.12+
 
 A única linguagem do projeto. 3.12 é o piso porque é a versão mínima usada
-nos outros projetos do Ryan (`hub-ryan-morais`, `webvigil`,
+nos outros projetos do Ryan (`site-ryan-morais`, `webvigil`,
 `pedra-papel-tesoura`) — manter o mesmo piso evita "funciona num projeto e
 não no outro" por causa de sintaxe.
 
