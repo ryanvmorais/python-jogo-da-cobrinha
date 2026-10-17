@@ -4,6 +4,8 @@
 # Agenda: domingo, 09:00 (America/Sao_Paulo). Cada ecossistema abre um unico PR
 # agrupado com os bumps minor e patch; um major continua em PR proprio. As
 # security updates seguem o ritmo dos alertas e ignoram esta agenda.
+# Cooldown: uma versao nova espera 7 dias antes de virar PR (uma release recem-saida
+# pode quebrar o projeto no dia da publicacao); as security updates ignoram o cooldown.
 version: 2
 updates:
   # Dependencia de runtime (windows-curses) e ferramentas de dev do
@@ -21,6 +23,8 @@ updates:
       prefix-development: "chore(deps-dev)"
     labels:
       - "dependencies"
+    cooldown:
+      default-days: 7
     groups:
       uv-minor-patch:
         update-types:
@@ -40,6 +44,8 @@ updates:
       prefix: "chore(ci)"
     labels:
       - "dependencies"
+    cooldown:
+      default-days: 7
     groups:
       github-actions-minor-patch:
         update-types:
