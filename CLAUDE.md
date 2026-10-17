@@ -52,9 +52,11 @@ iniciar_jogo.sh       # atalho Linux/macOS: uv run main.py (fallback: python3 ma
 pyproject.toml        # gerenciado por uv — windows-curses (win32) + grupo dev
                        # com ruff/black/mypy/pytest
 uv.lock               # lock do grafo de dependências — nunca editar à mão
+.gitattributes        # LF fixo nos atalhos .sh (com CRLF o shebang quebra no Linux/macOS)
+CODE_OF_CONDUCT.md    # Contributor Covenant 2.1 (pt-BR); contato: contato@ryanmorais.com.br
 .github/
-  workflows/ci.yml    # ruff -> black --check -> mypy -> pytest, em push/PR
-  dependabot.yml      # PRs aos domingos, agrupados por ecossistema (uv + github-actions)
+  workflows/ci.yml    # ruff -> black --check -> mypy -> pytest, em push/PR; Actions fixadas por SHA
+  dependabot.yml      # PRs aos domingos, agrupados por ecossistema (uv + github-actions), cooldown de 7 dias
   ISSUE_TEMPLATE/     # formulário de dúvida, erro ou sugestão (+ config.yml sem issue em branco)
   pull_request_template.md  # corpo padrão do PR: o quê/por quê e "Closes #N"
 ```
@@ -84,7 +86,7 @@ Detalhamento completo (RF-NN, ADRs) em
 
 Sequência do portão, sempre nesta ordem: `ruff check .` → `black --check
 .` → `mypy` → `pytest`. O `.github/workflows/ci.yml` roda exatamente essa
-sequência (Python 3.12, o piso, e 3.14, `ubuntu-26.04`) em todo push na `main` e
+sequência (Python 3.12, o piso, 3.14 e 3.15, `ubuntu-26.04`) em todo push na `main` e
 em todo PR — um check verde no PR significa o mesmo que um clone limpo
 passando.
 
