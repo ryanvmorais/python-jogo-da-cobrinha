@@ -35,7 +35,7 @@ Para quem está começando, o maior desafio não é a sintaxe, mas a **montagem 
 4. **Ecossistema e Alimentação:** Utilizamos a biblioteca `random` para sortear posições para a fruta. Quando a cabeça ocupa a mesma posição da fruta, o sistema incrementa a pontuação e **não remove a cauda** naquele turno, resultando no crescimento natural da cobra.
 5. **Prevenção de Movimento Oposto:** Para evitar o "suicídio lógico", implementamos uma trava que impede a cobra de virar 180° instantaneamente (ex: tentar ir para cima quando já está indo para baixo). O comando só é aceito se for uma curva lateral.
 6. **O Coração do Jogo (Game Loop):** Um loop `while True` coordena o tempo do jogo. Ele limpa a tela, desenha os atores (caracteres `ASCII`), processa a entrada do teclado e aguarda alguns milissegundos antes de repetir tudo, garantindo que o jogo não rode rápido demais para o olho humano.
-7. **Abstração com Funções:** O código é dividido em funções especialistas (como `mover_cobra` e `verificar_colisao`), facilitando a manutenção e permitindo que você entenda o papel de cada peça no funcionamento global do sistema.
+7. **Abstração com Funções:** O código é dividido em funções especialistas (como `mover_cobra` e `verificar_colisoes`), facilitando a manutenção e permitindo que você entenda o papel de cada peça no funcionamento global do sistema.
 
 ---
 

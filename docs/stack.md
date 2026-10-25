@@ -141,6 +141,65 @@ do curses assumir a tela).
 
 ---
 
+## Automação (GitHub)
+
+Nada disso entra no jogo: são os serviços do GitHub que conferem o
+repositório sozinhos, sem ninguém precisar lembrar de rodar.
+
+### GitHub Actions (CI)
+
+O servidor que roda o portão de qualidade (`ruff` → `black --check` →
+`mypy` → `pytest`) em todo push na `main` e em todo PR, em três versões do
+Python: 3.12 (o piso), 3.14 e 3.15. As Actions ficam fixadas pelo SHA do
+commit, com a versão no comentário.
+
+**Por que esta:** o repositório já está no GitHub, então o CI não precisa de
+conta nem serviço extra, e um check verde no PR significa o mesmo que um
+clone limpo passando. O SHA no lugar da tag existe porque uma tag pode ser
+movida depois de publicada e o SHA não.
+
+**Estudar:** `.github/workflows/ci.yml`, `strategy.matrix`, `uses:` com SHA
+fixo, `runs-on: ubuntu-26.04` (rótulo fixo, nunca `ubuntu-latest`).
+
+### CodeQL
+
+O code scanning do GitHub: lê o código Python procurando padrões de
+vulnerabilidade. Roda em push/PR na `main` e uma vez por semana.
+
+**Por que esta:** está como workflow do repositório e não como o "default
+setup" do GitHub, porque o runner fica fixo e um job travado pode ser
+re-executado.
+
+**Estudar:** `.github/workflows/codeql.yml`, a aba Security → Code scanning
+do repositório.
+
+### pip-audit
+
+Confere o `uv.lock` contra a base de CVEs conhecidas toda segunda, às 09:00
+(São Paulo), e também à mão (`workflow_dispatch`).
+
+**Por que esta:** o CI só roda em PR e o Dependabot nem sempre abre PR de
+correção, então uma CVE publicada depois do último PR passaria despercebida.
+Run vermelho = vulnerabilidade conhecida no lock.
+
+**Estudar:** `.github/workflows/pip-audit.yml`, `uv export` (gera a lista que
+o `pip-audit` lê).
+
+### Dependabot
+
+Abre PRs de atualização das dependências (`uv`) e das Actions
+(`github-actions`) aos domingos, com cooldown de 7 dias: não propõe uma
+versão recém-publicada.
+
+**Por que esta:** mantém o lock e o CI em dia sem depender de lembrar; o
+cooldown dá tempo para uma versão publicada com problema ser retirada antes
+de chegar ao repositório.
+
+**Estudar:** `.github/dependabot.yml`, `groups` (junta minor e patch do `uv`
+num PR só), `cooldown`.
+
+---
+
 ## Peças menores
 
 | Peça | Papel |
