@@ -54,7 +54,7 @@ pyproject.toml        # gerenciado por uv — windows-curses (win32) + grupo dev
 uv.lock               # lock do grafo de dependências — nunca editar à mão
 .gitattributes        # LF fixo nos atalhos .sh (com CRLF o shebang quebra no Linux/macOS)
 .gitignore            # ignora .venv, caches de ferramentas e __pycache__
-assets/               # jogo-da-cobrinha-terminal.svg, a captura de tela do topo do README
+assets/               # jogo-da-cobrinha-python-terminal.svg, a captura de tela do topo do README
 LICENSE               # licença MIT
 CONTRIBUTING.md       # guia de contribuição (fork, branch, Conventional Commits)
 CODE_OF_CONDUCT.md    # Contributor Covenant 2.1 (pt-BR); contato: contato@ryanmorais.com.br
