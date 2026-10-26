@@ -19,7 +19,7 @@ Este repositório é um espaço dedicado ao aprendizado de Python, Manipulação
 2.  Crie uma branch específica para sua modificação: `git checkout -b feature/nome-da-melhoria`.
 3.  Realize seus commits seguindo o padrão **Conventional Commits** (ex: `feat:`, `fix:`, `docs:`).
 4.  Antes de abrir o PR, rode a suíte de testes e o portão de qualidade —
-    veja [README → Testes e qualidade](README.md#-testes-e-qualidade). O
+    veja [README → Qualidade e testes](README.md#qualidade-e-testes). O
     mesmo roda automaticamente no CI a cada PR.
 5.  Envie suas alterações para o seu fork: `git push origin feature/nome-da-melhoria`.
 6.  Abra um **Pull Request** detalhando tecnicamente o que foi alterado e o impacto pedagógico da mudança.
